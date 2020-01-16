@@ -6,7 +6,7 @@ def get_user():
     """
     Asks user for name to use later in program.
     Returns:
-        (str) user_name - name of person 
+        (str) user_name - name of person
     """
     while True:
         user_name = input('Before we get started please enter your name:  ').strip().title()
@@ -107,22 +107,22 @@ def load_data(city, month, day):
     df['DOW'] = df['Start Time'].dt.weekday_name
     df['Hour'] = df['Start Time'].dt.hour
     df['Month'] = df['Start Time'].dt.month
-    
+
     # Rename first column to User ID
     df.rename(columns={'Unnamed: 0': 'User_ID'}, inplace = True)
-    
+
     # Filter dataframe to specified month(s)
     if month == 'All':
         df = df
-    else:  
+    else:
         df = df[df['Month'] == month]
-    
+
     # Filter dataframe to specified day(s)
     if day == 'All':
         df = df
     else:
         df = df[df['DOW'] == day]
-    
+
     return df
 
 def time_stats(df):
@@ -145,11 +145,11 @@ def time_stats(df):
     if len(df['DOW'].unique()) > 1:
         popular_DOW = df['DOW'].mode()[0]
         print('The most popular day of week is {}.'.format(popular_DOW))
-    
+
     # Display the most common start hour
     popular_hour = df['Hour'].mode()[0]
     print('The most popular hour of day is {}.'.format(popular_hour))
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -166,11 +166,11 @@ def station_stats(df):
     # Display most commonly used start station
     popular_start_station = df['Start Station'].mode()[0]
     print('The most used starting station is {}.'.format(popular_start_station))
-    
+
     # Display most commonly used end station
     popular_end_station = df['End Station'].mode()[0]
     print('The most used ending station is {}.'.format(popular_end_station))
-    
+
     # display most frequent combination of start station and end station trip
     df['Combo_Station'] = df['Start Station'] + df['End Station']
     popular_combo_station = df['Combo_Station'].mode()[0]
@@ -189,7 +189,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # Display total travel time 
+    # Display total travel time
     total_travel = df['Trip Duration'].sum()
     m, s = divmod(total_travel, 60)
     h, m = divmod(m, 60)
@@ -257,8 +257,9 @@ def raw_data(df, df_line):
             return
         else:
             print('Please enter a valid selection!')
-            
+
 def main():
+    # main function
     while True:
         df_line = 0
         user_name = get_user()
@@ -272,7 +273,7 @@ def main():
         user_stats(df, city)
         raw_data(df, df_line)
         print('-'*40)
-        restart = input('\n' + user_name + ' would you like to view data for another city or time frame?' 
+        restart = input('\n' + user_name + ' would you like to view data for another city or time frame?'
                         ' \nPlease enter Yes or No:  \n').title()
         if restart != 'Yes':
             break
