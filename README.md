@@ -1,15 +1,18 @@
 ### Date created
-Include the date you created this project and README file.
+Jan 16th, 2020
 
 ### Project Title
-Replace the Project Title
+Post your work on GitHub
 
 ### Description
-Describe what your project is about and what it does
+Final project for nanodegree Programming for Data Science 
 
 ### Files used
-Include the files used
+Explore_US_Bikeshare.py 
+chicago.csv 
+new_york_city.csv 
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+udacity dataanalyst nanodegree program
 
