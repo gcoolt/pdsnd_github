@@ -14,7 +14,7 @@ def get_user():
             print('-'*40)
             return user_name
         else:
-            print('Name must be greater than one character!')
+            print('Invalid entry! Name must be greater than one character!')
 
 def get_city(user_name):
     """
