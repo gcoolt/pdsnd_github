@@ -5,7 +5,8 @@ Jan 16th, 2020
 Post your work on GitHub
 
 ### Description
-Final project for nanodegree Programming for Data Science 
+US Bikeshare data
+This is a python program which allows the user to query bike sharing data from across three cities. There are functions in this program which condenses a lot of the code and allows the user to select multiple different options along the path ranging from city, month and day. The user will be able to see station info, trip durations, and individual user stats. 
 
 ### Files used
 Explore_US_Bikeshare.py 
@@ -15,4 +16,4 @@ washington.csv
 
 ### Credits
 udacity dataanalyst nanodegree program
-
+udacity programming for data science nanodegree program
